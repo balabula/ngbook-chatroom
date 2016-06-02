@@ -53,3 +53,7 @@ declare module 'angular2/router' {
 declare module 'angular2/http/testing' {
   export * from '@angular/http/testing';
 }
+declare module 'angular2-jwt' {
+  export * from 'angular2-jwt';
+}
+

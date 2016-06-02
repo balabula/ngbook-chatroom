@@ -4,10 +4,11 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated
 import {Home} from './components/home/home';
 import {About} from './components/about/about';
 import {RepoBrowser} from './components/repo-browser/repo-browser';
+import {Auth} from "./services/authentication";
 
 @Component({
   selector: 'seed-app',
-  providers: [],
+  providers: [Auth],
   pipes: [],
   directives: [ROUTER_DIRECTIVES],
   templateUrl: 'app/seed-app.html',
@@ -19,6 +20,6 @@ import {RepoBrowser} from './components/repo-browser/repo-browser';
 ])
 export class SeedApp {
 
-  constructor() {}
+  constructor(public auth: Auth) {}
 
 }
