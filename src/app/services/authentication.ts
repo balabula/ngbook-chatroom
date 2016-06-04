@@ -32,6 +32,7 @@ export class Auth {
       }
       // If authentication is successful, save the items
       // in local storage
+      console.log("token = " + token);
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', token);
       this.zoneImpl.run(() => this.user = profile);
@@ -43,5 +44,14 @@ export class Auth {
     localStorage.removeItem('id_token');
     this.zoneImpl.run(() => this.user = null);
     this.router.navigate(['Home']);
+  }
+
+  public requestUrl(){
+    this.authHttp.get("http://10.0.0.9/test/api/orders")
+      .subscribe(
+        data => console.log("data = " + data.json()),
+        err => console.log("err = " + err.message),
+        () => console.log('Complete')
+      );
   }
 }

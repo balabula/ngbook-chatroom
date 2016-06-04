@@ -22,4 +22,5 @@ export class SeedApp {
 
   constructor(public auth: Auth) {}
 
+
 }
